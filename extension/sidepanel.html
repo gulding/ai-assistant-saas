@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --glass-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --accent: #3b82f6;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      width: 100%;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+    .panel {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .draft-card {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    button:hover {
+      background: #2563eb;
+    }
+    .status {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🤖 AI Secretary</h2>
+  <div class="status">Status: Monitoring inbox in background...</div>
+  
+  <div class="panel">
+    <h3 style="margin: 0 0 8px 0; font-size: 1rem;">Pending Drafts</h3>
+    <div id="drafts-container">
+      <div style="color: var(--text-muted); font-size: 0.9rem;">No pending drafts.</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3 style="margin: 0 0 8px 0; font-size: 1rem;">Manual Test</h3>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0 0 8px 0;">
+      Trigger the background alarm manually to simulate receiving an email.
+    </p>
+    <button id="test-btn">Simulate Incoming Email</button>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>

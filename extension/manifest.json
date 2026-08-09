@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "AI Secretary SaaS",
+  "version": "1.0",
+  "description": "Your personal AI secretary that lives in your browser, checks your emails, and drafts responses.",
+  "permissions": [
+    "sidePanel",
+    "notifications",
+    "storage",
+    "alarms",
+    "identity"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "https://www.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open AI Secretary"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+}
