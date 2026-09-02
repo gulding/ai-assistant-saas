@@ -39,7 +39,6 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-pip install sqlalchemy
 ```
 
 **Configure Environment Variables:**
@@ -74,3 +73,24 @@ Since the extension interacts directly with your local backend, load it into Chr
 
 ---
 *Built with modern web standards and AI workflows.*
+
+## ?? Extension Manifest (`manifest.json`)
+```json
+{
+  "manifest_version": 3,
+  "name": "AI Secretary",
+  "version": "1.0",
+  "description": "Monitors emails and drafts meeting responses.",
+  "permissions": ["activeTab", "sidePanel", "storage"],
+  "host_permissions": ["https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open AI Secretary"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+}
+```
